@@ -1,3 +1,8 @@
+#import librairies
+from tensorflow.keras.preprocessing.sequence import pad_sequences
+from tensorflow.keras.utils import to_categorical
+import numpy as np
+
 def data_generator(descriptions, photos, wordtoidx,max_length, num_photos_per_batch,vocab_size):
     """
     Function to duplicate image for each partial caption

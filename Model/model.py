@@ -1,4 +1,16 @@
-def create_model(OUTPUT_DIM,vocab_size,embedding_dim,max_length):
+#import libraries
+from tensorflow.keras import Input, layers
+from tensorflow.keras.layers import add
+from tensorflow.keras.layers import (LSTM, Embedding, 
+    TimeDistributed, Dense, RepeatVector, 
+    Activation, Flatten, Reshape, concatenate,  
+    Dropout, BatchNormalization)
+from tensorflow.keras.models import Model
+from tensorflow.keras.preprocessing.sequence import pad_sequences
+import numpy as np
+
+
+def create_model(OUTPUT_DIM,vocab_size,embedding_dim,max_length,embedding_matrix):
     """
     :param OUTPUT_DIM: the output dimension 
     :param vocab_size: the size of the vocabulary

@@ -1,34 +1,21 @@
 #importing essentials
-import os
-import string
 import glob
 import logging
+import numpy as np
+import datetime 
+import pytz 
+import os
+from tensorflow.keras.models import Model
 from tensorflow.keras.applications import MobileNet
 import tensorflow.keras.applications.mobilenet  
 from tensorflow.keras.applications.inception_v3 import InceptionV3
 import tensorflow.keras.applications.inception_v3
-from tqdm import tqdm
-import tensorflow.keras.preprocessing.image
-import pickle
-from time import time
-import numpy as np
-from PIL import Image
 from tensorflow.keras.models import Sequential
-from tensorflow.keras.layers import (LSTM, Embedding, 
-    TimeDistributed, Dense, RepeatVector, 
-    Activation, Flatten, Reshape, concatenate,  
-    Dropout, BatchNormalization)
 from tensorflow.keras.optimizers import Adam, RMSprop
-from tensorflow.keras import Input, layers
 from tensorflow.keras import optimizers
-from tensorflow.keras.models import Model
-from tensorflow.keras.layers import add
-from tensorflow.keras.preprocessing.sequence import pad_sequences
-from tensorflow.keras.utils import to_categorical
-import matplotlib.pyplot as plt
-import datetime 
-import pytz 
-    
+from tqdm import tqdm
+
+
 # using now() to get current time 
 current_time = datetime.datetime.now(pytz.timezone('Asia/Kolkata')) 
 logging.info(f'The time at which this script was run {current_time}')
@@ -44,14 +31,11 @@ logging.info("All essential libraries imported")
 if __name__=="__main__":
   
   #path where data is stored 
-  if COLAB:
-    root_captioning="/content/drive/MyDrive/Image_Captioning"
-  else:
-    root_captioning="./data/Image_Captioning"
+  root_captioning="./data/Image_Captioning"
   logging.info('Root path is set.')
 
   #cleaning the captions in the Flickr dataset
-  from Preprocessing.caption_preprocessing import caption_cleaning
+  from Preprocessing.captions_preprocessing import caption_cleaning
   lookup,lex,max_length= caption_cleaning(root_captioning=root_captioning)
   logging.info('Captions are cleaned.')
 
@@ -65,7 +49,7 @@ if __name__=="__main__":
   logging.info('Filenames for the train and the test set are read.')
 
   #building the sequences
-  from Preprocessing.caption_preprocessing import caption_cleaning
+  from Preprocessing.captions_preprocessing import train_desc
   train_descriptions=train_desc(lookup,train_images,START,STOP)
   logging.info('Training sequences are built.')
 
@@ -89,6 +73,7 @@ if __name__=="__main__":
   #generate training set and test set 
   from Preprocessing.train_test import train_test_generator
   from Preprocessing.image_preprocessing import encodeImage
+  from Utils.capture_time import capture
   encoding_train=train_test_generator(root_captioning=root_captioning
                                       ,img_list=train_img
                                       ,encodeImage=encodeImage
@@ -159,7 +144,7 @@ if __name__=="__main__":
 
   #creating our neural network 
   from Model.model import create_model
-  caption_model=create_model(OUTPUT_DIM,vocab_size,embedding_dim,max_length)
+  caption_model=create_model(OUTPUT_DIM,vocab_size,embedding_dim,max_length,embedding_matrix)
   logging.info('Model architecture is compiled.')
 
   #some settings for training
@@ -170,6 +155,7 @@ if __name__=="__main__":
   if not os.path.exists(model_path):
     #training the neural network 
     from Model.train_model import train_nn
+    from Model.data_gen import data_generator
     caption_model=train_nn(EPOCHS=20,
                            caption_model=caption_model,
                            data_generator=data_generator,

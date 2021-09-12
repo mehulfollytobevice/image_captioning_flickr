@@ -1,3 +1,7 @@
+#import libraries
+import os
+import string
+
 def caption_cleaning(root_captioning):
     """
     Function to clean captions and remove extra whitespace, punctuation, and other distractions

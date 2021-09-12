@@ -1,3 +1,8 @@
+#import libraries
+from tqdm import tqdm
+from time import time
+import logging
+
 def train_nn(EPOCHS,caption_model,data_generator,train_descriptions,encoding_train,wordtoidx,max_length,number_pics_per_batch,steps,model_path,vocab_size,**kwargs):
     """
     Function to train our neural network

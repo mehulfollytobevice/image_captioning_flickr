@@ -1,3 +1,8 @@
+#import libraries
+from PIL import Image
+import numpy as np
+import tensorflow.keras.preprocessing.image
+
 def encodeImage(img,WIDTH,HEIGHT,preprocess_input,encode_model,OUTPUT_DIM):
     """
     Function to encode the images
