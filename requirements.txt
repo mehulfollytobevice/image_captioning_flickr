@@ -3,4 +3,3 @@ tensorflow
 pillow<7
 packaging
 ipywidgets==7.5.1
-pickle
