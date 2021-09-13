@@ -5,6 +5,7 @@ import numpy as np
 import datetime 
 import pytz 
 import os
+import pickle
 from tensorflow.keras.models import Model
 from tensorflow.keras.applications import MobileNet
 import tensorflow.keras.applications.mobilenet  
@@ -171,3 +172,14 @@ if __name__=="__main__":
     #loading the pre-trained model
     caption_model.load_weights(model_path)
     logging.info('Our caption model is loaded from the memory.')
+
+  #save important information for later use
+  caption_data_path = os.path.join(root_captioning,"data",f'caption_data.pickle')
+  with open(caption_data_path,"wb") as f: 
+    data={"max_length":max_length,
+          "wordtoidx":wordtoidx,
+          "idxtoword":idxtoword,
+          "vocab_size":vocab_size,
+          "embedding_matrix":embedding_matrix
+          }
+    pickle.dump(data,f)
