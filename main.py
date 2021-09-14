@@ -171,6 +171,7 @@ if __name__=="__main__":
   else:
     #loading the pre-trained model
     caption_model.load_weights(model_path)
+    print(f'Pre-trained model exists. Here is the summary: \n {caption_model.summary()}')
     logging.info('Our caption model is loaded from the memory.')
 
   #save important information for later use
