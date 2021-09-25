@@ -2,7 +2,7 @@
 
 - This repository contains the code for **"Image Captioning System using Flickr8K dataset"**.
 - Using this project, we can generate captions for images automatically.
-- This project uses deep learning to accomplish the aformentioned task.
+- This project uses deep learning to accomplish the aforementioned task.
   
 ## 📝 Description
 - Image Captioning is the process of generating a textual description for a given image. It has been a very important and fundamental task in the domain of Deep Learning and has a huge number of applications. For instance, image captioning technologies can be used to create an application to help people who have low or no eyesight to gather information about the world around them. 
