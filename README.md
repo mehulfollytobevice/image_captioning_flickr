@@ -2,7 +2,7 @@
 
 - This repository contains the code for **"Image Captioning System using Flickr8K dataset"**.
 - Using this project, we can generate captions for images automatically.
-- This project uses deep learning to accomplish the aforementioned task.
+- This project uses deep learning to accomplish the above mentioned task.
 
 ## Some Examples
 
@@ -53,9 +53,6 @@
 
 ## Photo Credits:
 - Photo 1 by <a href="https://unsplash.com/@imandrewpons?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Andrew Pons</a> on <a href="https://unsplash.com/s/photos/dog-playing-with-ball?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
-
 - Photo 2 by <a href="https://unsplash.com/@chrishcush?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Christian Bowen</a> on <a href="https://unsplash.com/s/photos/kids-beach?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
-  
 - Photo 3 by <a href="https://unsplash.com/@kaeptn?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Kay Liedl</a> on <a href="https://unsplash.com/s/photos/biking?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
-  
 - Photo 4 by <a href="https://unsplash.com/@markusspiske?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Markus Spiske</a> on <a href="https://unsplash.com/s/photos/basketball-nba?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
