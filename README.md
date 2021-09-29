@@ -29,12 +29,13 @@
 
 ## :monocle_face: Test our project
 To test our project using a friendly GUI, follow these steps:
-
-1. Paste the URL of this repo into Binder’s URL field.
-2. Change the File drop-down to instead select URL.
-3. In the “URL to open” field, enter “/voila/render/image_captioner.ipynb”
-4. Click the clipboard button at the bottom right to copy the URL and paste it somewhere safe.
-5. Click Launch.
+1. Go to https://mybinder.org/
+2. Paste the URL of this repo into Binder’s URL field.
+3. Change the File drop-down to instead select URL.
+4. In the “URL to open” field, enter “/voila/render/image_captioner.ipynb”
+5. Click the clipboard button at the bottom right to copy the URL and paste it somewhere safe.
+6. Click Launch.
+7. Wait a while for the application to launch. Afterwards, you can play around with it and share the link with your friends.
 
 It should look like this:
 
