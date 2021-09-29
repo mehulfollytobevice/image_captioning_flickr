@@ -27,6 +27,18 @@
 - Download the text descriptions: https://github.com/jbrownlee/Datasets/releases/download/Flickr8k/Flickr8k_text.zip
 - Download the dataset and place it in the main directory.
 
+## :monocle_face: Test our project
+To test our project using a friendly GUI, follow these steps:
+
+1. Paste the URL of this repo into Binder’s URL field.
+2. Change the File drop-down to instead select URL.
+3. In the “URL to open” field, enter “/voila/render/image_captioner.ipynb”
+4. Click the clipboard button at the bottom right to copy the URL and paste it somewhere safe.
+5. Click Launch.
+
+It should look like this:
+
+![binder_pic](https://github.com/mehulfollytobevice/image_captioning_flickr/blob/main/pics/binder.PNG)
 
 ## 🏽‍ Download GloVe Embeddings 
 - Download the GloVE embeddings from here : https://nlp.stanford.edu/projects/glove/
