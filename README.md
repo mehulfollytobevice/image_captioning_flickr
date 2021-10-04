@@ -27,6 +27,12 @@
 - Download the text descriptions: https://github.com/jbrownlee/Datasets/releases/download/Flickr8k/Flickr8k_text.zip
 - Download the dataset and place it in the main directory.
 
+## 📝 Description of files:
+
+- <b>main.py -</b> This is the main file of the project. It contains the code to train the image captioning model and save it into the '/data/' directory.
+- <b>image_captioner.ipynb -</b> This file contains the code for our image captioning application. The application is built using ipywidgets and Voila. This notebook can be directly deployed onto Binder where it gets converted into an interactive application. For more information, see the next section.
+- <b>requirements.txt -</b> This file contains the dependencies required to run the image captioning application (image_captioner.ipynb).
+
 ## :monocle_face: Test our project
 To test our project using a friendly GUI, follow these steps:
 1. Go to https://mybinder.org/
